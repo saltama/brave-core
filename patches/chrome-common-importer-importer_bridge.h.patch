@@ -1,8 +1,8 @@
 diff --git a/chrome/common/importer/importer_bridge.h b/chrome/common/importer/importer_bridge.h
-index 56d4259aba433df997802109cf5a8d28c03ebd13..26bb05d70c9674cab27112704b8957972ff2dab5 100644
+index 56d4259aba433df997802109cf5a8d28c03ebd13..a9c9285691f372274ccc0d19c02fd0923f7b6a94 100644
 --- a/chrome/common/importer/importer_bridge.h
 +++ b/chrome/common/importer/importer_bridge.h
-@@ -15,10 +15,12 @@
+@@ -15,10 +15,13 @@
  #include "chrome/common/importer/importer_data_types.h"
  #include "chrome/common/importer/importer_url_row.h"
  #include "components/favicon_base/favicon_usage_data.h"
@@ -12,10 +12,11 @@ index 56d4259aba433df997802109cf5a8d28c03ebd13..26bb05d70c9674cab27112704b895797
  struct ImportedBookmarkEntry;
  struct ImporterAutofillFormDataEntry;
 +struct BraveStats;
++struct BraveLedger;
  
  namespace autofill {
  struct PasswordForm;
-@@ -66,6 +68,12 @@ class ImporterBridge : public base::RefCountedThreadSafe<ImporterBridge> {
+@@ -66,6 +69,15 @@ class ImporterBridge : public base::RefCountedThreadSafe<ImporterBridge> {
    virtual void SetAutofillFormData(
        const std::vector<ImporterAutofillFormDataEntry>& entries) = 0;
  
@@ -24,6 +25,9 @@ index 56d4259aba433df997802109cf5a8d28c03ebd13..26bb05d70c9674cab27112704b895797
 +
 +  virtual void UpdateStats(
 +      const BraveStats& stats) {};
++
++  virtual void UpdateLedger(
++      const BraveLedger& ledger) {};
 +
    // Notifies the coordinator that the import operation has begun.
    virtual void NotifyStarted() = 0;

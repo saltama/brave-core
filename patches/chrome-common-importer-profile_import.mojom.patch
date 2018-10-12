@@ -1,5 +1,5 @@
 diff --git a/chrome/common/importer/profile_import.mojom b/chrome/common/importer/profile_import.mojom
-index 625b5ddec268292acf11f3c060c07c336ca1317f..1738d9d68a93ec1940688caa3352d55f898c7c63 100644
+index 625b5ddec268292acf11f3c060c07c336ca1317f..6cf008bbf1ad197fd6121e7726fd9662be9d0c03 100644
 --- a/chrome/common/importer/profile_import.mojom
 +++ b/chrome/common/importer/profile_import.mojom
 @@ -6,6 +6,7 @@ module chrome.mojom;
@@ -10,23 +10,27 @@ index 625b5ddec268292acf11f3c060c07c336ca1317f..1738d9d68a93ec1940688caa3352d55f
  import "url/mojom/url.mojom";
  
  const string kProfileImportServiceName = "profile_import";
-@@ -31,6 +32,9 @@ struct FaviconUsageDataList;
+@@ -31,6 +32,12 @@ struct FaviconUsageDataList;
  [Native]
  struct ImporterIE7PasswordInfo;
  
 +[Native]
 +struct BraveStats;
 +
++[Native]
++struct BraveLedger;
++
  [Native]
  enum ImportItem;
  
-@@ -64,6 +68,9 @@ interface ProfileImportObserver {
+@@ -64,6 +71,10 @@ interface ProfileImportObserver {
    OnAutofillFormDataImportStart(uint32 total_autofill_form_data_entry_count);
    OnAutofillFormDataImportGroup(
        array<ImporterAutofillFormDataEntry> autofill_form_data_entry_group);
 +  OnCookiesImportStart(uint32 total_cookies_count);
 +  OnCookiesImportGroup(array<network.mojom.CanonicalCookie> cookies_group);
 +  OnStatsImportReady(BraveStats stats);
++  OnLedgerImportReady(BraveLedger ledger);
    // Windows only:
    OnIE7PasswordReceived(ImporterIE7PasswordInfo importer_password_info);
  };
