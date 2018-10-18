@@ -1,0 +1,14 @@
+diff --git a/third_party/blink/renderer/platform/plugins/plugin_data.cc b/third_party/blink/renderer/platform/plugins/plugin_data.cc
+index 8e1cba5dcfe9b753ca4c872b551e13b12b7d5f2e..0f9d0db71a4b759f19cb26848cf6a937474021cb 100644
+--- a/third_party/blink/renderer/platform/plugins/plugin_data.cc
++++ b/third_party/blink/renderer/platform/plugins/plugin_data.cc
+@@ -101,6 +101,9 @@ void PluginData::UpdatePluginList(const SecurityOrigin* main_frame_origin) {
+   Vector<mojom::blink::PluginInfoPtr> plugins;
+   registry->GetPlugins(false, main_frame_origin_, &plugins);
+   for (const auto& plugin : plugins) {
++    if (plugin->name != "Shockwave Flash") {
++      continue;
++    }
+     auto* plugin_info =
+         new PluginInfo(plugin->name, FilePathToWebString(plugin->filename),
+                        plugin->description, plugin->background_color);
