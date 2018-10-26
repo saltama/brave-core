@@ -7,23 +7,24 @@
 #include "base/base64.h"
 #include "base/memory/weak_ptr.h"
 
-#include "brave/components/brave_rewards/browser/rewards_service.h"
-#include "brave/components/brave_rewards/browser/wallet_properties.h"
+#include "brave/browser/brave_rewards/add_funds_popup.h"
+#include "brave/common/webui_url_constants.h"
 #include "brave/components/brave_rewards/browser/balance_report.h"
 #include "brave/components/brave_rewards/browser/rewards_notification_service.h"
 #include "brave/components/brave_rewards/browser/rewards_notification_service_observer.h"
+#include "brave/components/brave_rewards/browser/rewards_service.h"
 #include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
+#include "brave/components/brave_rewards/browser/wallet_properties.h"
 #include "brave/components/brave_rewards/resources/grit/brave_rewards_resources.h"
-#include "brave/common/webui_url_constants.h"
 #include "chrome/browser/profiles/profile.h"
-#include "content/public/browser/web_ui_message_handler.h"
+#include "content/public/browser/render_view_host.h"
+#include "content/public/browser/web_contents.h"
 #include "content/public/browser/web_ui_data_source.h"
 #include "content/public/browser/web_ui_message_handler.h"
-#include "content/public/browser/web_contents.h"
-#include "content/public/browser/render_view_host.h"
 #include "content/public/common/bindings_policy.h"
-
+#include "ui/views/widget/widget.h"
+#include "ui/views/widget/widget_observer.h"
 
 using content::WebUIMessageHandler;
 
@@ -32,7 +33,8 @@ namespace {
 // The handler for Javascript messages for Brave about: pages
 class RewardsDOMHandler : public WebUIMessageHandler,
                           public brave_rewards::RewardsNotificationServiceObserver,
-                          public brave_rewards::RewardsServiceObserver {
+                          public brave_rewards::RewardsServiceObserver,
+                          public views::WidgetObserver {
  public:
   RewardsDOMHandler();
   ~RewardsDOMHandler() override;
@@ -42,10 +44,14 @@ class RewardsDOMHandler : public WebUIMessageHandler,
   // WebUIMessageHandler implementation.
   void RegisterMessages() override;
 
+  // content::WidgetObserver implementation.
+  void OnWidgetClosing(views::Widget* widget) override;
+
  private:
   void GetAllBalanceReports();
   void HandleCreateWalletRequested(const base::ListValue* args);
   void GetWalletProperties(const base::ListValue* args);
+  void AddFundsToWallet(const base::ListValue* args);
   void GetGrant(const base::ListValue* args);
   void GetGrantCaptcha(const base::ListValue* args);
   void GetWalletPassphrase(const base::ListValue* args);
@@ -114,17 +120,30 @@ class RewardsDOMHandler : public WebUIMessageHandler,
       const brave_rewards::RewardsNotificationService::RewardsNotificationsList&
           notifications_list) override;
 
+  content::WebContents* add_funds_contents_;
   brave_rewards::RewardsService* rewards_service_;  // NOT OWNED
   base::WeakPtrFactory<RewardsDOMHandler> weak_factory_;
 
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
 };
 
-RewardsDOMHandler::RewardsDOMHandler() : weak_factory_(this) {}
+RewardsDOMHandler::RewardsDOMHandler()
+  : add_funds_contents_(nullptr), weak_factory_(this) {}
 
 RewardsDOMHandler::~RewardsDOMHandler() {
   if (rewards_service_)
     rewards_service_->RemoveObserver(this);
+
+  // If Add Funds popup is open, close it since it's a part of the rewards UI.
+  if (add_funds_contents_) {
+    views::Widget* widget = views::Widget::GetTopLevelWidgetForNativeView(
+      add_funds_contents_->GetNativeView());
+    if (widget)
+      widget->RemoveObserver(this);
+    
+    add_funds_contents_->ClosePage();
+    add_funds_contents_ = nullptr;
+  }
 }
 
 void RewardsDOMHandler::RegisterMessages() {
@@ -133,6 +152,9 @@ void RewardsDOMHandler::RegisterMessages() {
                           base::Unretained(this)));
   web_ui()->RegisterMessageCallback("brave_rewards.getWalletProperties",
       base::BindRepeating(&RewardsDOMHandler::GetWalletProperties,
+                          base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards.addFundsToWallet",
+      base::BindRepeating(&RewardsDOMHandler::AddFundsToWallet,
                           base::Unretained(this)));
   web_ui()->RegisterMessageCallback("brave_rewards.getGrant",
                                     base::BindRepeating(&RewardsDOMHandler::GetGrant,
@@ -187,6 +209,12 @@ void RewardsDOMHandler::RegisterMessages() {
                                                         base::Unretained(this)));
 }
 
+// content::WidgetObserver implementation.
+void RewardsDOMHandler::OnWidgetClosing(views::Widget* widget) {
+  widget->RemoveObserver(this);
+  add_funds_contents_ = nullptr;
+}
+
 void RewardsDOMHandler::Init() {
   Profile* profile = Profile::FromWebUI(web_ui());
   rewards_service_ =
@@ -236,6 +264,34 @@ void RewardsDOMHandler::GetWalletProperties(const base::ListValue* args) {
     return;
 
   rewards_service_->GetWalletProperties();
+}
+
+void RewardsDOMHandler::AddFundsToWallet(const base::ListValue* args) {
+  if (!rewards_service_)
+    return;
+
+  std::map<std::string, std::string> addresses =
+      rewards_service_->GetAddresses();
+  if (addresses.empty())
+    return;
+
+  content::WebContents* contents = web_ui()->GetWebContents();
+  if (!contents)
+    return;
+
+  // If we already have a popup open, then bring it up front. Otherwise, create
+  // a new popup and set ourselves to watch for its closing.
+  if (add_funds_contents_) {
+      add_funds_contents_->Focus();
+  } else {
+    add_funds_contents_ = ::brave_rewards::OpenAddFundsWindow(contents,
+      addresses);
+    views::Widget* topLevelWidget =
+      views::Widget::GetTopLevelWidgetForNativeView(
+        add_funds_contents_->GetNativeView());
+    if (topLevelWidget)
+      topLevelWidget->AddObserver(this);
+  }
 }
 
 void RewardsDOMHandler::OnWalletInitialized(
