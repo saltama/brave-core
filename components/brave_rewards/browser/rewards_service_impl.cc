@@ -25,8 +25,8 @@
 #include "bat/ledger/publisher_info.h"
 #include "bat/ledger/wallet_info.h"
 #include "brave/common/brave_switches.h"
-#include "brave/common/extensions/api/brave_rewards.h"
 #include "brave/components/brave_rewards/browser/balance_report.h"
+#include "brave/components/brave_rewards/browser/extension_rewards_service_observer.h"
 #include "brave/components/brave_rewards/browser/publisher_info_database.h"
 #include "brave/components/brave_rewards/browser/rewards_fetcher_service_observer.h"
 #include "brave/components/brave_rewards/browser/rewards_notification_service.h"
@@ -43,8 +43,7 @@
 #include "components/grit/brave_components_resources.h"
 #include "content/public/browser/browser_task_traits.h"
 #include "content_site.h"
-#include "extensions/browser/event_router.h"
-#include "extensions/browser/extension_api_frame_id_map.h"
+#include "extensions/buildflags/buildflags.h"
 #include "net/base/escape.h"
 #include "net/base/registry_controlled_domains/registry_controlled_domain.h"
 #include "net/base/url_util.h"
@@ -54,8 +53,12 @@
 #include "url/gurl.h"
 #include "url/url_canon_stdstring.h"
 
-using extensions::Event;
-using extensions::EventRouter;
+// TODO(erogul): Remove this when RewardsServicePrivateObserver is no
+// longer needed
+#if BUILDFLAG(ENABLE_EXTENSIONS)
+#include "brave/common/extensions/api/brave_rewards.h"
+#include "extensions/browser/event_router.h"
+#endif
 
 using namespace net::registry_controlled_domains;
 using namespace std::placeholders;
@@ -212,6 +215,108 @@ time_t GetCurrentTimestamp() {
   return base::Time::NowFromSystemTime().ToTimeT();
 }
 
+// TODO(erogul): Remove these private observers and related classes when
+// GetCurrentBalanceReport and GetPublisherActivity are implemented via
+// callbacks
+class RewardsServicePrivateObserver : public base::CheckedObserver {
+ public:
+  ~RewardsServicePrivateObserver() override {}
+
+  virtual void OnGetCurrentBalanceReport(RewardsService* rewards_service,
+                                         const BalanceReport& balance_report) {}
+  virtual void OnGetPublisherActivityFromUrl(
+      RewardsService* rewards_service,
+      int error_code,
+      std::unique_ptr<ledger::PublisherInfo> info,
+      uint64_t windowId) {}
+};
+
+base::ObserverList<RewardsServicePrivateObserver> private_observers;
+
+#if BUILDFLAG(ENABLE_EXTENSIONS)
+class ExtensionRewardsServicePrivateObserver
+    : public RewardsServicePrivateObserver {
+ public:
+  ExtensionRewardsServicePrivateObserver(Profile* profile)
+      : profile_(profile) {}
+  ~ExtensionRewardsServicePrivateObserver() override {}
+
+  // RewardsServicePrivateObserver implementation
+  void OnGetCurrentBalanceReport(RewardsService* rewards_service,
+                                 const BalanceReport& balance_report) override {
+    extensions::EventRouter* event_router =
+        extensions::EventRouter::Get(profile_);
+    if (event_router) {
+      extensions::api::brave_rewards::OnCurrentReport::Properties properties;
+
+      properties.ads = balance_report.earning_from_ads;
+      properties.closing = balance_report.closing_balance;
+      properties.contribute = balance_report.auto_contribute;
+      properties.deposit = balance_report.deposits;
+      properties.grant = balance_report.grants;
+      properties.tips = balance_report.one_time_donation;
+      properties.opening = balance_report.opening_balance;
+      properties.total = balance_report.total;
+      properties.recurring = balance_report.recurring_donation;
+
+      std::unique_ptr<base::ListValue> args(
+          extensions::api::brave_rewards::OnCurrentReport::Create(properties)
+              .release());
+      std::unique_ptr<extensions::Event> event(new extensions::Event(
+          extensions::events::BRAVE_ON_CURRENT_REPORT,
+          extensions::api::brave_rewards::OnCurrentReport::kEventName,
+          std::move(args)));
+      event_router->BroadcastEvent(std::move(event));
+    }
+  }
+
+  void OnGetPublisherActivityFromUrl(
+      RewardsService* rewards_service,
+      int error_code,
+      std::unique_ptr<ledger::PublisherInfo> info,
+      uint64_t windowId) override {
+    extensions::EventRouter* event_router =
+        extensions::EventRouter::Get(profile_);
+    if (!event_router) {
+      return;
+    }
+
+    extensions::api::brave_rewards::OnPublisherData::Publisher publisher;
+
+    if (!info.get()) {
+      info.reset(new ledger::PublisherInfo());
+      info->id = "";
+    }
+
+    publisher.percentage = info->percent;
+    publisher.verified = info->verified;
+    publisher.excluded = info->excluded == ledger::PUBLISHER_EXCLUDE::EXCLUDED;
+    publisher.name = info->name;
+    publisher.url = info->url;
+    publisher.provider = info->provider;
+    publisher.favicon_url = info->favicon_url;
+    publisher.publisher_key = info->id;
+    std::unique_ptr<base::ListValue> args(
+        extensions::api::brave_rewards::OnPublisherData::Create(windowId,
+                                                                publisher)
+            .release());
+
+    std::unique_ptr<extensions::Event> event(new extensions::Event(
+        extensions::events::BRAVE_ON_PUBLISHER_DATA,
+        extensions::api::brave_rewards::OnPublisherData::kEventName,
+        std::move(args)));
+    event_router->BroadcastEvent(std::move(event));
+  }
+
+ private:
+  Profile* profile_;
+
+  DISALLOW_COPY_AND_ASSIGN(ExtensionRewardsServicePrivateObserver);
+};
+
+std::unique_ptr<ExtensionRewardsServicePrivateObserver> private_observer;
+#endif
+
 static uint64_t next_id = 1;
 
 }  // namespace
@@ -241,6 +346,10 @@ const base::FilePath::StringType kPublishers_list("publishers_list");
 RewardsServiceImpl::RewardsServiceImpl(Profile* profile)
     : profile_(profile),
       ledger_(ledger::Ledger::CreateInstance(this)),
+#if BUILDFLAG(ENABLE_EXTENSIONS)
+      extension_rewards_service_observer_(
+          std::make_unique<ExtensionRewardsServiceObserver>(profile_)),
+#endif
       file_task_runner_(base::CreateSequencedTaskRunnerWithTraits(
           {base::MayBlock(), base::TaskPriority::BEST_EFFORT,
            base::TaskShutdownBehavior::BLOCK_SHUTDOWN})),
@@ -251,6 +360,11 @@ RewardsServiceImpl::RewardsServiceImpl(Profile* profile)
       publisher_info_backend_(
           new PublisherInfoDatabase(publisher_info_db_path_)),
       next_timer_id_(0) {
+#if BUILDFLAG(ENABLE_EXTENSIONS)
+  private_observer =
+      std::make_unique<ExtensionRewardsServicePrivateObserver>(profile_);
+#endif
+
   const base::CommandLine& command_line =
       *base::CommandLine::ForCurrentProcess();
 
@@ -299,6 +413,10 @@ RewardsNotificationService* RewardsServiceImpl::notification_service() {
 }
 
 void RewardsServiceImpl::Init() {
+#if BUILDFLAG(ENABLE_EXTENSIONS)
+  AddObserver(extension_rewards_service_observer_.get());
+  private_observers.AddObserver(private_observer.get());
+#endif
   ledger_->Initialize();
   notification_service()->ReadRewardsNotifications();
 }
@@ -502,6 +620,10 @@ std::string RewardsServiceImpl::GenerateGUID() const {
 }
 
 void RewardsServiceImpl::Shutdown() {
+#if BUILDFLAG(ENABLE_EXTENSIONS)
+  RemoveObserver(extension_rewards_service_observer_.get());
+  private_observers.RemoveObserver(private_observer.get());
+#endif
   BitmapFetcherService* image_service =
       BitmapFetcherServiceFactory::GetForBrowserContext(profile_);
   if (image_service) {
@@ -898,20 +1020,8 @@ void RewardsServiceImpl::RunIOTask(
 }
 
 void RewardsServiceImpl::TriggerOnWalletInitialized(int error_code) {
-  // webui
   for (auto& observer : observers_)
     observer.OnWalletInitialized(this, error_code);
-
-  // extension
-  EventRouter* event_router = EventRouter::Get(profile_);
-  if (event_router) {
-    std::unique_ptr<base::ListValue> args(new base::ListValue());
-    std::unique_ptr<Event> event(
-        new Event(extensions::events::BRAVE_WALLET_CREATED,
-          extensions::api::brave_rewards::OnWalletCreated::kEventName,
-          std::move(args)));
-    event_router->BroadcastEvent(std::move(event));
-  }
 }
 
 void RewardsServiceImpl::TriggerOnWalletProperties(int error_code,
@@ -940,37 +1050,6 @@ void RewardsServiceImpl::TriggerOnWalletProperties(int error_code,
 
     // webui
     observer.OnWalletProperties(this, error_code, std::move(wallet_properties));
-  }
-  // extension
-  EventRouter* event_router = EventRouter::Get(profile_);
-  if (event_router && wallet_info) {
-    extensions::api::brave_rewards::OnWalletProperties::Properties properties;
-
-    properties.probi = wallet_info->probi_;
-    properties.balance = wallet_info->balance_;
-    properties.rates.btc = wallet_info->rates_["BTC"];
-    properties.rates.eth = wallet_info->rates_["ETH"];
-    properties.rates.usd = wallet_info->rates_["USD"];
-    properties.rates.eur = wallet_info->rates_["EUR"];
-
-    for (size_t i = 0; i < wallet_info->grants_.size(); i ++) {
-      properties.grants.push_back(extensions::api::brave_rewards::OnWalletProperties::Properties::GrantsType());
-      auto& grant = properties.grants[properties.grants.size() -1];
-
-      grant.altcurrency = wallet_info->grants_[i].altcurrency;
-      grant.probi = wallet_info->grants_[i].probi;
-      grant.expiry_time = wallet_info->grants_[i].expiryTime;
-    }
-
-    std::unique_ptr<base::ListValue> args(
-        extensions::api::brave_rewards::OnWalletProperties::Create(properties)
-            .release());
-
-    std::unique_ptr<Event> event(
-        new Event(extensions::events::BRAVE_ON_WALLET_PROPERTIES,
-                  extensions::api::brave_rewards::OnWalletProperties::kEventName,
-                  std::move(args)));
-    event_router->BroadcastEvent(std::move(event));
   }
 }
 
@@ -1194,35 +1273,10 @@ std::map<std::string, brave_rewards::BalanceReport> RewardsServiceImpl::GetAllBa
 void RewardsServiceImpl::GetCurrentBalanceReport() {
   ledger::BalanceReportInfo report;
   auto now = base::Time::Now();
-  bool success = ledger_->GetBalanceReport(
-      GetPublisherMonth(now),
-      GetPublisherYear(now),
-      &report);
-
+  bool success = ledger_->GetBalanceReport(GetPublisherMonth(now),
+                                           GetPublisherYear(now), &report);
   if (success) {
-    EventRouter* event_router = EventRouter::Get(profile_);
-    if (event_router) {
-      extensions::api::brave_rewards::OnCurrentReport::Properties properties;
-
-      properties.ads = report.earning_from_ads_;
-      properties.closing = report.closing_balance_;
-      properties.contribute = report.auto_contribute_;
-      properties.deposit = report.deposits_;
-      properties.grant = report.grants_;
-      properties.tips = report.one_time_donation_;
-      properties.opening = report.opening_balance_;
-      properties.total = report.total_;
-      properties.recurring = report.recurring_donation_;
-
-      std::unique_ptr<base::ListValue> args(
-          extensions::api::brave_rewards::OnCurrentReport::Create(properties)
-              .release());
-      std::unique_ptr<Event> event(
-          new Event(extensions::events::BRAVE_ON_CURRENT_REPORT,
-                    extensions::api::brave_rewards::OnCurrentReport::kEventName,
-                    std::move(args)));
-      event_router->BroadcastEvent(std::move(event));
-    }
+    TriggerOnGetCurrentBalanceReport(report);
   }
 }
 
@@ -1270,37 +1324,11 @@ void RewardsServiceImpl::OnExcludedSitesChanged() {
 void RewardsServiceImpl::OnPublisherActivity(ledger::Result result,
                                              std::unique_ptr<ledger::PublisherInfo> info,
                                              uint64_t windowId) {
-  if (result == ledger::Result::LEDGER_OK || result == ledger::Result::NOT_FOUND) {
-    EventRouter* event_router = EventRouter::Get(profile_);
-    if (!event_router) {
-      return;
-    }
-
-    extensions::api::brave_rewards::OnPublisherData::Publisher publisher;
-
-    if (!info.get()) {
-      info.reset(new ledger::PublisherInfo());
-      info->id = "";
-    }
-
-    publisher.percentage = info->percent;
-    publisher.verified = info->verified;
-    publisher.excluded = info->excluded == ledger::PUBLISHER_EXCLUDE::EXCLUDED;
-    publisher.name = info->name;
-    publisher.url = info->url;
-    publisher.provider = info->provider;
-    publisher.favicon_url = info->favicon_url;
-    publisher.publisher_key = info->id;
-    std::unique_ptr<base::ListValue> args(
-        extensions::api::brave_rewards::OnPublisherData::Create(windowId, publisher)
-          .release());
-
-    std::unique_ptr<Event> event(
-        new Event(extensions::events::BRAVE_ON_PUBLISHER_DATA,
-          extensions::api::brave_rewards::OnPublisherData::kEventName,
-          std::move(args)));
-    event_router->BroadcastEvent(std::move(event));
+  if (result != ledger::Result::LEDGER_OK &&
+      result != ledger::Result::NOT_FOUND) {
+    return;
   }
+  TriggerOnGetPublisherActivityFromUrl(result, std::move(info), windowId);
 }
 
 double RewardsServiceImpl::GetContributionAmount() {
@@ -1596,6 +1624,30 @@ void RewardsServiceImpl::OnRemoveRecurring(const std::string& publisher_key,
                     publisher_info_backend_.get()),
       base::Bind(&RewardsServiceImpl::OnRemovedRecurring,
                      AsWeakPtr(), callback));
+}
+
+void RewardsServiceImpl::TriggerOnGetCurrentBalanceReport(
+    const ledger::BalanceReportInfo& report) {
+  for (auto& observer : private_observers) {
+    brave_rewards::BalanceReport balance_report;
+    balance_report.opening_balance = report.opening_balance_;
+    balance_report.closing_balance = report.closing_balance_;
+    balance_report.grants = report.grants_;
+    balance_report.earning_from_ads = report.earning_from_ads_;
+    balance_report.auto_contribute = report.auto_contribute_;
+    balance_report.recurring_donation = report.recurring_donation_;
+    balance_report.one_time_donation = report.one_time_donation_;
+    observer.OnGetCurrentBalanceReport(this, balance_report);
+  }
+}
+
+void RewardsServiceImpl::TriggerOnGetPublisherActivityFromUrl(
+    ledger::Result result,
+    std::unique_ptr<ledger::PublisherInfo> info,
+    uint64_t windowId) {
+  for (auto& observer : private_observers)
+    observer.OnGetPublisherActivityFromUrl(this, result, std::move(info),
+                                           windowId);
 }
 
 void RewardsServiceImpl::SetContributionAutoInclude(std::string publisher_key,

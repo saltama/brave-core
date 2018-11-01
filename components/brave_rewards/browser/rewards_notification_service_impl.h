@@ -8,7 +8,9 @@
 #include <memory>
 #include <string>
 
+#include "brave/components/brave_rewards/browser/extension_rewards_notification_service_observer.h"
 #include "brave/components/brave_rewards/browser/rewards_notification_service.h"
+#include "extensions/buildflags/buildflags.h"
 
 class Profile;
 
@@ -55,6 +57,10 @@ class RewardsNotificationServiceImpl
 
   Profile* profile_;
   std::map<RewardsNotificationID, RewardsNotification> rewards_notifications_;
+#if BUILDFLAG(ENABLE_EXTENSIONS)
+  std::unique_ptr<ExtensionRewardsNotificationServiceObserver>
+      extension_rewards_notification_service_observer_;
+#endif
 
   DISALLOW_COPY_AND_ASSIGN(RewardsNotificationServiceImpl);
 };

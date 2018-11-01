@@ -10,6 +10,8 @@
 #include "base/macros.h"
 #include "base/observer_list.h"
 
+class Profile;
+
 namespace brave_rewards {
 
 class RewardsNotificationServiceObserver;
