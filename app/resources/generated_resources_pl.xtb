@@ -442,7 +442,7 @@ Przechowuj plik klucza w bezpiecznym miejscu. Będzie on potrzebny do utworzenia
 <translation id="4130207949184424187">To rozszerzenie ustawiło inną stronę wyświetlaną po wyszukiwaniu w omniboksie.</translation>
 <translation id="5355926466126177564">Rozszerzenie „<ph name="EXTENSION_NAME"/>” ustawiło inną stronę wyświetlaną po wyszukiwaniu w omniboksie.</translation>
 <translation id="1546280085599573572">To rozszerzenie ustawiło inną stronę wyświetlaną po kliknięciu przycisku strony startowej.</translation>
-<translation id="5143374789336132547">Rozszerzenie „<ph name="EXTENSION_NAME"/>” ustawiło inną stronę wyświetlaną po kliknięciu przycisku strony startowej.</translation>
+<translation id="5143374789336132547">Rozszerzenie „<ph name="EXTENSION_NAME"/>” ustawiło inną stronę wyświetlaną po kliknięciu przycisku strony głównej.</translation>
 <translation id="1729533290416704613">Kontroluje także to, jaka strona wyświetla się po wyszukiwaniu w omniboksie.</translation>
 <translation id="5627086634964711283">Kontroluje także to, jaka strona wyświetla się po kliknięciu przycisku strony startowej.</translation>
 <translation id="5965661248935608907">Kontroluje także to, jaka strona wyświetla się po kliknięciu przycisku strony startowej lub wyszukiwaniu w omniboksie.</translation>
@@ -505,9 +505,9 @@ Przechowuj plik klucza w bezpiecznym miejscu. Będzie on potrzebny do utworzenia
 <translation id="6921709132208495314">Zatrzymaj przesyłanie danych na tej stronie</translation>
 <translation id="1683850629661177840">Wersja uproszczona przyspiesza teraz wszystkie strony, również te używające HTTPS.</translation>
 <translation id="2724841811573117416">Dzienniki WebRTC</translation>
-<translation id="1969654639948595766">Dzienniki tekstowe WebRTC (<ph name="WEBRTC_TEXT_LOG_COUNT"/>)</translation>
-<translation id="6865708901122695652">Dzienniki zdarzeń WebRTC (<ph name="WEBRTC_EVENT_LOG_COUNT"/>)</translation>
-<translation id="6592267180249644460">Zapisany dziennik WebRTC: <ph name="WEBRTC_LOG_CAPTURE_TIME"/></translation>
+<translation id="1969654639948595766">Logi tekstowe WebRTC (<ph name="WEBRTC_TEXT_LOG_COUNT"/>)</translation>
+<translation id="6865708901122695652">Logi zdarzeń WebRTC (<ph name="WEBRTC_EVENT_LOG_COUNT"/>)</translation>
+<translation id="6592267180249644460">Zapisany log WebRTC: <ph name="WEBRTC_LOG_CAPTURE_TIME"/></translation>
 <translation id="4093955363990068916">Plik lokalny:</translation>
 <translation id="2071393345806050157">Nie ma lokalnego pliku dziennika.</translation>
 <translation id="6628328486509726751">Przesłano: <ph name="WEBRTC_LOG_UPLOAD_TIME"/></translation>
@@ -517,7 +517,7 @@ Przechowuj plik klucza w bezpiecznym miejscu. Będzie on potrzebny do utworzenia
 <translation id="3650845953328929506">Dziennik oczekuje na przesłanie.</translation>
 <translation id="1818913467757368489">Trwa przesyłanie dziennika.</translation>
 <translation id="1188807932851744811">Dziennik nie został przesłany.</translation>
-<translation id="4688036121858134881">Identyfikator dziennika lokalnego: <ph name="WEBRTC_EVENT_LOG_LOCAL_ID"/>.</translation>
+<translation id="4688036121858134881">Identyfikator logu lokalnego: <ph name="WEBRTC_EVENT_LOG_LOCAL_ID"/>.</translation>
 <translation id="7497981768003291373">Nie ma zapisanych ostatnio dzienników tekstowych WebRTC.</translation>
 <translation id="3954953195017194676">Nie ma zapisanych ostatnio dzienników zdarzeń WebRTC.</translation>
 <translation id="2076269580855484719">Ukryj wtyczkę</translation>
@@ -676,8 +676,8 @@ Przechowuj plik klucza w bezpiecznym miejscu. Będzie on potrzebny do utworzenia
 <translation id="138784436342154190">Przywrócić domyślną stronę początkową?</translation>
 <translation id="5086874064903147617">Przywrócić domyślną stronę główną?</translation>
 <translation id="3556000484321257665">Wyszukiwarka została zmieniona na <ph name="URL"/>.</translation>
-<translation id="4900392736118574277">Strona początkowa została zmieniona na <ph name="URL"/>.</translation>
-<translation id="3702500414347826004">Strony początkowe zostały zmienione i zawierają <ph name="URL"/>.</translation>
+<translation id="4900392736118574277">Strona startowa została zmieniona na <ph name="URL"/>.</translation>
+<translation id="3702500414347826004">Strony startowe zostały zmienione i zawierają <ph name="URL"/>.</translation>
 <translation id="7837776265184002579">Strona główna została zmieniona na <ph name="URL"/>.</translation>
 <translation id="5442550868130618860">Włącz automatyczne aktualizowanie</translation>
 <translation id="6790428901817661496">Odtwórz</translation>
@@ -1747,7 +1747,6 @@ Osoby z wolnym połączeniem mogą nie zobaczyć treści, które przesyłasz.</
 <translation id="6827236167376090743">Ten film będzie odtwarzany bez końca.</translation>
 <translation id="6248400709929739064">Włącz napisy</translation>
 <translation id="7881969471599061635">Wyłącz napisy</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Niektóre ustawienia należące do <ph name="PRIMARY_EMAIL"/> zostały Ci udostępnione. Mają one wpływ na Twoje konto, tylko jeśli korzystasz z wielokrotnego logowania.</translation>
 <translation id="5860491529813859533">Włącz</translation>
 <translation id="1485141095922496924">Wersja <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -2851,7 +2850,7 @@ Osoby z wolnym połączeniem mogą nie zobaczyć treści, które przesyłasz.</
 <translation id="1607139524282324606">Wyczyść wpis</translation>
 <translation id="6025215716629925253">Zrzut stosu</translation>
 <translation id="3475538074809281797">{LINE_COUNT,plural, =1{&lt;1 wiersz jest niewidoczny&gt;}few{&lt;$1 wiersze są niewidoczne&gt;}many{&lt;$1 wierszy jest niewidocznych&gt;}other{&lt;$1 wiersza jest niewidoczne&gt;}}</translation>
-<translation id="5334899159203764908">Więcej informacji o uprawnieniach <ph name="BEGIN_LINK"/>dostępu dla strony<ph name="END_LINK"/></translation>
+<translation id="5334899159203764908">Więcej informacji o uprawnieniach <ph name="BEGIN_LINK"/>dostępu do stron<ph name="END_LINK"/></translation>
 <translation id="8389492867173948260">Zezwól temu rozszerzeniu na odczytywanie i zmienianie wszystkich Twoich danych na stronach, które otwierasz:</translation>
 <translation id="407173827865827707">Po kliknięciu</translation>
 <translation id="6455264371803474013">Na określonych stronach</translation>

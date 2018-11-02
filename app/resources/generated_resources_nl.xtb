@@ -1746,7 +1746,6 @@ Bewaar je sleutelbestand op een veilige plaats. Je hebt het bestand nodig om nie
 <translation id="6827236167376090743">Deze video wordt eindeloos afgespeeld.</translation>
 <translation id="6248400709929739064">Ondertiteling inschakelen</translation>
 <translation id="7881969471599061635">Ondertiteling uitschakelen</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Sommige instellingen die bij <ph name="PRIMARY_EMAIL"/> horen, worden met je gedeeld. Deze instellingen beïnvloeden je account alleen wanneer toegang tot meerdere accounts wordt gebruikt.</translation>
 <translation id="5860491529813859533">Inschakelen</translation>
 <translation id="1485141095922496924">Versie <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -1865,6 +1864,7 @@ Bewaar je sleutelbestand op een veilige plaats. Je hebt het bestand nodig om nie
 <translation id="6352773953037195952">Hoogste</translation>
 <translation id="3677657024345889897">Stilst</translation>
 <translation id="167160931442925455">Luidst</translation>
+<translation id="2445007895943112260">&lt;ph naam="PERCENTAGE"&gt;$1&lt;ex&gt;120&lt;/ex&gt;%&lt;/ph&gt;</translation>
 <translation id="9129010913019873477"><ph name="PERCENTAGE"/> (standaard)</translation>
 <translation id="3602290021589620013">Voorbeeld</translation>
 <translation id="7037509989619051237">Tekst voor voorbeeld</translation>
@@ -2764,6 +2764,7 @@ Bewaar je sleutelbestand op een veilige plaats. Je hebt het bestand nodig om nie
 <translation id="3954469006674843813"><ph name="WIDTH"/> x <ph name="HEIGHT"/> (<ph name="REFRESH_RATE"/> hertz)</translation>
 <translation id="7889565820482017512">Schermgrootte</translation>
 <translation id="8448729345478502352">Items op het scherm kleiner of groter maken</translation>
+<translation id="513425442047539523">&lt;ph naam="DISPLAY_ZOOM"&gt;$1&lt;ex&gt;120&lt;/ex&gt;%&lt;/ph&gt;</translation>
 <translation id="2155772377859296191">Ziet eruit als <ph name="WIDTH"/> x <ph name="HEIGHT"/></translation>
 <translation id="4863769717153320198">Ziet eruit als <ph name="WIDTH"/> x <ph name="HEIGHT"/> (standaardresolutie)</translation>
 <translation id="1125550662859510761">Ziet eruit als <ph name="WIDTH"/> x <ph name="HEIGHT"/> (systeemeigen resolutie)</translation>

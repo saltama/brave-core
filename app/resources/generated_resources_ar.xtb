@@ -1535,7 +1535,7 @@
 <translation id="2473109739642988997">‏حصة Brave Software Drive ليست كبيرة بشكلٍ كافٍ.</translation>
 <translation id="1148097584170732637">تم العثور على <ph name="FILE_COUNT"/>.
     <ph name="LINE_BREAK1"/>
-    لا توجد مساحة كافية في سعة التخزين المحلية. ويتطلب وجود <ph name="FILE_SIZE"/> إضافي.
+    لا توجد مساحة كافية في مساحة التخزين المحلية. ويتطلب وجود <ph name="FILE_SIZE"/> إضافي.
     <ph name="LINE_BREAK2"/>
     حاول تحديد عدد صور أقل.</translation>
 <translation id="2352947182261340447">لا تتوفر مساحة كافية في سعة التخزين المحلية.</translation>
@@ -1727,7 +1727,7 @@
 <translation id="2984337792991268709">اليوم <ph name="TODAY_DAYTIME"/></translation>
 <translation id="8336153091935557858">الأمس <ph name="YESTERDAY_DAYTIME"/></translation>
 <translation id="1807938677607439181">كل الملفات</translation>
-<translation id="240770291734945588">سعة التخزين المتاحة هي <ph name="SPACE_AVAILABLE"/></translation>
+<translation id="240770291734945588">مساحة التخزين المتاحة هي <ph name="SPACE_AVAILABLE"/></translation>
 <translation id="6199801702437275229">في انتظار معلومات المساحة...</translation>
 <translation id="6485131920355264772">تعذّر جلب معلومات المساحة</translation>
 <translation id="7748626145866214022">‏تتوفر مزيد من الخيارات على شريط الإجراءات. يُرجى الضغط على "Alt + A" لتركيز هذا الشريط.</translation>
@@ -1746,7 +1746,6 @@
 <translation id="6827236167376090743">سيستمر تشغيل هذا الفيديو إلى نهاية الفيلم.</translation>
 <translation id="6248400709929739064">تفعيل الترجمات المصاحبة</translation>
 <translation id="7881969471599061635">إيقاف الترجمات المصاحبة</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">تتم مشاركة بعض الإعدادات التي تنتمي إلى <ph name="PRIMARY_EMAIL"/> معك. لن تؤثر هذه الإعدادات في حسابك إلا عند استخدامك الدخول المتعدد.</translation>
 <translation id="5860491529813859533">تشغيل</translation>
 <translation id="1485141095922496924">الإصدار <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>

@@ -511,7 +511,7 @@
 <translation id="4093955363990068916">ไฟล์ในเครื่อง:</translation>
 <translation id="2071393345806050157">ไม่มีไฟล์บันทึกในเครื่อง</translation>
 <translation id="6628328486509726751">อัปโหลด <ph name="WEBRTC_LOG_UPLOAD_TIME"/> แล้ว</translation>
-<translation id="6458701200018867744">อัปเดตไม่สำเร็จ (<ph name="WEBRTC_LOG_UPLOAD_TIME"/>)</translation>
+<translation id="6458701200018867744">อัปโหลดไม่สำเร็จ (<ph name="WEBRTC_LOG_UPLOAD_TIME"/>)</translation>
 <translation id="5946591249682680882">รหัสรายงาน <ph name="WEBRTC_LOG_REPORT_ID"/></translation>
 <translation id="1737968601308870607">ข้อบกพร่องของไฟล์</translation>
 <translation id="3650845953328929506">กำลังรออัปโหลดบันทึก</translation>
@@ -1746,7 +1746,6 @@
 <translation id="6827236167376090743">วิดีโอนี้จะเล่นวนรอบ</translation>
 <translation id="6248400709929739064">เปิดคำบรรยาย</translation>
 <translation id="7881969471599061635">ปิดคำบรรยาย</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">การตั้งค่าบางอย่างที่เป็นของ <ph name="PRIMARY_EMAIL"/> กำลังมีการแชร์กับคุณ การตั้งค่าเหล่านี้มีผลกับบัญชีของคุณเมื่อมีการใช้การลงชื่อเข้าสู่ระบบพร้อมกันหลายบัญชีเท่านั้น</translation>
 <translation id="5860491529813859533">เปิด</translation>
 <translation id="1485141095922496924">เวอร์ชัน <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>

@@ -960,7 +960,7 @@
 <translation id="8363142353806532503">Микрофон је блокиран</translation>
 <translation id="2762441749940182211">Камера је блокирана</translation>
 <translation id="5074318175948309511">Можда треба поново да учитате ову страницу да би нова подешавања ступила на снагу.</translation>
-<translation id="1322046419516468189">Прегледајте сачуване лозинке и управљајте њима на <ph name="SAVED_PASSWORDS_STORE"/></translation>
+<translation id="1322046419516468189">Прегледајте сачуване лозинке и управљајте њима са <ph name="SAVED_PASSWORDS_STORE"/></translation>
 <translation id="5713644099811900409">Brave Software налога</translation>
 <translation id="3785727820640310185">Сачуване лозинке за овај сајт</translation>
 <translation id="3404065873681873169">Ниједна лозинка није сачувана за овај сајт</translation>
@@ -1747,7 +1747,6 @@
 <translation id="6827236167376090743">Репродукција овог видео снимка ће се наставити у недоглед.</translation>
 <translation id="6248400709929739064">Омогући титлове</translation>
 <translation id="7881969471599061635">Онемогући титлове</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Нека подешавања чији је власник <ph name="PRIMARY_EMAIL"/> се деле са вама. Та подешавања утичу на налог само када користите вишеструко пријављивање.</translation>
 <translation id="5860491529813859533">Укључи</translation>
 <translation id="1485141095922496924">Верзија <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>

@@ -527,7 +527,7 @@ Weka faili yako ya funguo mahali salama. Utaihitaji kuunda matoleo mapya ya kien
 <translation id="3908393983276948098">Toleo hili la <ph name="PLUGIN_NAME"/> limepitwa na wakati</translation>
 <translation id="8465444703385715657"><ph name="PLUGIN_NAME"/> inahitaji ruhusa yako ili kutumia</translation>
 <translation id="7206693748120342859">Inapakua <ph name="PLUGIN_NAME"/>...</translation>
-<translation id="6272643420381259437">Hitilafu imetokea <ph name="ERROR"/> wakati wa kupakua programu-jalizi</translation>
+<translation id="6272643420381259437">Hitilafu imetokea <ph name="ERROR"/> wakati wa kupakua programu jalizi</translation>
 <translation id="8719653885894320876">Upakuaji wa <ph name="PLUGIN_NAME"/> haujafaulu</translation>
 <translation id="873545264931343897"><ph name="PLUGIN_NAME"/> ikikamilisha kusasisha, pakia upya ukurasa ili kuiwasha</translation>
 <translation id="8463955938112983119"><ph name="PLUGIN_NAME"/> imezimwa.</translation>
@@ -1746,7 +1746,6 @@ Sidhani tovuti hii inapaswa kuzuiwa!</translation>
 <translation id="6827236167376090743">Video hii itaendelea kucheza bila kukoma.</translation>
 <translation id="6248400709929739064">Washa manukuu</translation>
 <translation id="7881969471599061635">Zima manukuu</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Baadhi ya mipangilio ya <ph name="PRIMARY_EMAIL"/> inashirikiwa nawe. Mipangilio hii huathiri akaunti yako unapotumia uwezo wa kuingia katika akaunti nyingi kwa wakati mmoja.</translation>
 <translation id="5860491529813859533">Washa</translation>
 <translation id="1485141095922496924">Toleo la <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -1865,6 +1864,7 @@ Sidhani tovuti hii inapaswa kuzuiwa!</translation>
 <translation id="6352773953037195952">Juu kabisa</translation>
 <translation id="3677657024345889897">Sauti ya chini kabisa</translation>
 <translation id="167160931442925455">Sauti ya juu kabisa</translation>
+<translation id="2445007895943112260">&lt;ph name="PERCENTAGE"&gt;$1&lt;ex&gt;120&lt;/ex&gt;%&lt;/ph&gt;</translation>
 <translation id="9129010913019873477"><ph name="PERCENTAGE"/> (chaguomsingi)</translation>
 <translation id="3602290021589620013">Hakiki</translation>
 <translation id="7037509989619051237">Maandishi kwa ajili ya kukagua</translation>
@@ -2764,6 +2764,7 @@ Sidhani tovuti hii inapaswa kuzuiwa!</translation>
 <translation id="3954469006674843813"><ph name="WIDTH"/> x <ph name="HEIGHT"/> (Hezi <ph name="REFRESH_RATE"/>)</translation>
 <translation id="7889565820482017512">Ukubwa wa Onyesho</translation>
 <translation id="8448729345478502352">Ongeza au upunguze ukubwa wa vipengee vilivyo kwenye skrini yako</translation>
+<translation id="513425442047539523">&lt;ph name="DISPLAY_ZOOM"&gt;$1&lt;ex&gt;120&lt;/ex&gt;%&lt;/ph&gt;</translation>
 <translation id="2155772377859296191">Inaonekana kama <ph name="WIDTH"/> x <ph name="HEIGHT"/></translation>
 <translation id="4863769717153320198">Inaonekana kama <ph name="WIDTH"/> x <ph name="HEIGHT"/> (Chaguomsingi)</translation>
 <translation id="1125550662859510761">Inaonekana kama <ph name="WIDTH"/> x <ph name="HEIGHT"/> (Ya asili)</translation>

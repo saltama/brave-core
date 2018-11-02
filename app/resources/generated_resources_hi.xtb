@@ -348,7 +348,7 @@
 <translation id="1965624977906726414">कोई विशेष अनुमति नहीं है.</translation>
 <translation id="2886771036282400576">• <ph name="PERMISSION"/></translation>
 <translation id="5588033542900357244">(<ph name="RATING_COUNT"/>)</translation>
-<translation id="2124930039827422115">{1,plural, =1{एक उपयोगकर्ता ने <ph name="AVERAGE_RATING"/> रेट किया है.}one{# उपयोगकर्ताओं ने <ph name="AVERAGE_RATING"/> रेट किया है.}other{# उपयोगकर्ताओं ने <ph name="AVERAGE_RATING"/> रेट किया है.}}</translation>
+<translation id="2124930039827422115">{1,plural, =1{एक उपयोगकर्ता ने <ph name="AVERAGE_RATING"/> रेटिंग दी है.}one{# उपयोगकर्ताओं ने <ph name="AVERAGE_RATING"/> रेटिंग दी है.}other{# उपयोगकर्ताओं ने <ph name="AVERAGE_RATING"/> रेटिंग दी है.}}</translation>
 <translation id="6605847144724004692">किसी भी उपयोगकर्ता ने अभी तक रेट नहीं किया है.</translation>
 <translation id="655384502888039633"><ph name="USER_COUNT"/> उपयोगकर्ता</translation>
 <translation id="5261683757250193089">वेब स्टोर में खोलें</translation>
@@ -720,7 +720,7 @@
 <translation id="109758035718544977">साइटें अनम्यूट करें</translation>
 <translation id="2336228925368920074">सभी टैब बुकमार्क करें...</translation>
 <translation id="756445078718366910">ब्राउज़र विंडो खोलें</translation>
-<translation id="3683524264665795342"><ph name="APP_NAME"/> स्क्रीन साझाकरण अनुरोध</translation>
+<translation id="3683524264665795342"><ph name="APP_NAME"/> स्क्रीन शेयर करने का अनुरोध</translation>
 <translation id="3569382839528428029">क्या आप चाहते हैं कि <ph name="APP_NAME"/> आपकी स्क्रीन को शेयर करे?</translation>
 <translation id="651942933739530207">क्या आप चाहते हैं कि <ph name="APP_NAME"/> आपकी स्क्रीन और ऑडियो आउटपुट शेयर करे?</translation>
 <translation id="4722920479021006856"><ph name="APP_NAME"/> आपकी स्क्रीन शेयर कर रहा है.</translation>
@@ -1746,7 +1746,6 @@
 <translation id="6827236167376090743">यह वीडियो शाम होने तक चलता रहेगा.</translation>
 <translation id="6248400709929739064">उपशीर्षक सक्षम करें</translation>
 <translation id="7881969471599061635">सबटाइटल बंद करें</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605"><ph name="PRIMARY_EMAIL"/> से संबंधित कुछ सेटिंग आपके साथ शेयर की जा रही हैं. ये सेटिंग आपके खाते को केवल तभी प्रभावित करती हैं जब एकाधिक साइन इन का उपयोग किया जाता है.</translation>
 <translation id="5860491529813859533">चालू करें</translation>
 <translation id="1485141095922496924">वर्शन <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>

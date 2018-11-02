@@ -1747,7 +1747,6 @@ Rakto failą laikykite saugioje vietoje. Jo reikės, kai norėsite sukurti nauja
 <translation id="6827236167376090743">Šis vaizdo įrašas bus grojamas neribotą laiką.</translation>
 <translation id="6248400709929739064">Įgalinti subtitrus</translation>
 <translation id="7881969471599061635">Išjungti subtitrus</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Kai kurie <ph name="PRIMARY_EMAIL"/> priklausantys nustatymai bendrinami su jumis. Šie nustatymai turi įtakos jūsų paskyrai, tik kai naudojate kelias paskyras.</translation>
 <translation id="5860491529813859533">Įjungti</translation>
 <translation id="1485141095922496924"><ph name="PRODUCT_VERSION"/> versija (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -2585,7 +2584,7 @@ Rakto failą laikykite saugioje vietoje. Jo reikės, kai norėsite sukurti nauja
 <translation id="4562155214028662640">Pridėti kontrolinį kodą</translation>
 <translation id="1719312230114180055">Pastaba: kontrolinis kodas gali būti ne toks saugus kaip sudėtingas slaptažodis ar PIN kodas.</translation>
 <translation id="6029292188939175871">ištrinti [<ph name="FINGERPRINT_NAME"/>], mygtukas</translation>
-<translation id="1927632033341042996"><ph name="NEW_FINGER_NUMBER"/> kontrolinis kodas</translation>
+<translation id="1927632033341042996"><ph name="NEW_FINGER_NUMBER"/> piršto antspaudas</translation>
 <translation id="7665369617277396874">Pridėti paskyrą</translation>
 <translation id="3422989461909154470">Visas „Brave Software“ paskyras, prie kurių prisijungta iš programų ir svetainių, galite tvarkyti čia.</translation>
 <translation id="1987317783729300807">Paskyros</translation>

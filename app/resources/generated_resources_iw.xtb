@@ -1746,7 +1746,6 @@
 <translation id="6827236167376090743">סרטון זה ימשיך לפעול ללא הפסקה.</translation>
 <translation id="6248400709929739064">הפעל כתוביות</translation>
 <translation id="7881969471599061635">השבת כתוביות</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">חלק מההגדרות השייכות ל-<ph name="PRIMARY_EMAIL"/> משותפות איתך. ההגדרות האלה משפיעות על החשבון שלך רק בעת שימוש בכניסה עם מספר חשבונות.</translation>
 <translation id="5860491529813859533">הפעל</translation>
 <translation id="1485141095922496924">גרסה <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -2804,7 +2803,7 @@
 <translation id="1848219224579402567">יציאה מהחשבון כשמכסה סגור</translation>
 <translation id="8781980678064919987">כיבוי כשהמכסה סגור</translation>
 <translation id="3636766455281737684">‏‎‎‎%‎‏‎‎‏‎‏‎<ph name="PERCENTAGE"/>‌ - נותרו <ph name="TIME"/></translation>
-<translation id="727441411541283857">‏%‎<ph name="PERCENTAGE"/> - ‏<ph name="TIME"/> עד טעינה מלאה</translation>
+<translation id="727441411541283857"><ph name="PERCENTAGE"/>% - ‏<ph name="TIME"/> עד טעינה מלאה</translation>
 <translation id="6247708409970142803">%<ph name="PERCENTAGE"/></translation>
 <translation id="1940546824932169984">מכשירים מחוברים</translation>
 <translation id="3468999815377931311">‏טלפון Android</translation>

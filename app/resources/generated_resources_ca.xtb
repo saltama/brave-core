@@ -404,7 +404,7 @@ Deseu el fitxer de clau en una ubicació segura. El necessitareu per crear versi
 <translation id="2850541429955027218">Afegeix el tema</translation>
 <translation id="1181037720776840403">Suprimeix</translation>
 <translation id="2932883381142163287">Informa d'un ús inadequat</translation>
-<translation id="5696143504434933566">Informa d'un ús inadequat de l'extensió "<ph name="EXTENSION_NAME"/>"</translation>
+<translation id="5696143504434933566">Informa d'un ús abusiu de l'extensió "<ph name="EXTENSION_NAME"/>"</translation>
 <translation id="2485422356828889247">Desinstal·la</translation>
 <translation id="3342361181740736773">"<ph name="TRIGGERING_EXTENSION_NAME"/>" vol suprimir aquesta extensió.</translation>
 <translation id="2678063897982469759">Torna a activar</translation>
@@ -516,11 +516,11 @@ Deseu el fitxer de clau en una ubicació segura. El necessitareu per crear versi
 <translation id="5946591249682680882">Identificador de l'informe: <ph name="WEBRTC_LOG_REPORT_ID"/></translation>
 <translation id="1737968601308870607">Arxiva l'error</translation>
 <translation id="3650845953328929506">Registre de càrrega pendent</translation>
-<translation id="1818913467757368489">S\'ha iniciat la càrrega de registre</translation>
+<translation id="1818913467757368489">S'ha iniciat la càrrega de registre</translation>
 <translation id="1188807932851744811">El registre no s'ha penjat.</translation>
 <translation id="4688036121858134881">Identificador del registre local: <ph name="WEBRTC_EVENT_LOG_LOCAL_ID"/>.</translation>
 <translation id="7497981768003291373">No teniu registres de text WebRTC capturats recentment.</translation>
-<translation id="3954953195017194676">No teniu registres d\'esdeveniments WebRTC capturats recentment.</translation>
+<translation id="3954953195017194676">No teniu registres d'esdeveniments WebRTC capturats recentment.</translation>
 <translation id="2076269580855484719">Amaga aquest connector</translation>
 <translation id="2129825002735785149">Actualitza el connector</translation>
 <translation id="9088234649737575428">La política d'empresa té el connector <ph name="PLUGIN_NAME"/> bloquejat</translation>
@@ -1865,6 +1865,7 @@ Deseu el fitxer de clau en una ubicació segura. El necessitareu per crear versi
 <translation id="6352773953037195952">El més alt</translation>
 <translation id="3677657024345889897">Volum mínim</translation>
 <translation id="167160931442925455">Volum màxim</translation>
+<translation id="2445007895943112260">&lt;ph name="TANT PER CENT"&gt;$1&lt;ex&gt;120&lt;/ex&gt;%&lt;/ph&gt;</translation>
 <translation id="9129010913019873477"><ph name="PERCENTAGE"/> (valor predeterminat)</translation>
 <translation id="3602290021589620013">Previsualitza</translation>
 <translation id="7037509989619051237">Text de prova</translation>
@@ -2386,8 +2387,8 @@ Deseu el fitxer de clau en una ubicació segura. El necessitareu per crear versi
 <translation id="5487521232677179737">Esborra les dades</translation>
 <translation id="3151562827395986343">Esborra l'historial, les galetes, la memòria cau i altres dades</translation>
 <translation id="8356197132883132838"><ph name="TITLE"/> (<ph name="COUNT"/>)</translation>
-<translation id="3407837288045706722">Per trobar més opcions relacionades amb la privadesa, la seguretat i la recopilació de dades, consulta <ph name="BEGIN_LINK"/>Sincronització i personalització<ph name="END_LINK"/></translation>
-<translation id="7222718784508482526">Per trobar més opcions relacionades amb la privadesa, la seguretat i la recopilació de dades, consulta <ph name="BEGIN_LINK"/>Sincronització i serveis de Brave Software<ph name="END_LINK"/></translation>
+<translation id="3407837288045706722">Per trobar més opcions relacionades amb la privadesa, la seguretat i la recollida de dades, consulta <ph name="BEGIN_LINK"/>Sincronització i personalització<ph name="END_LINK"/></translation>
+<translation id="7222718784508482526">Per trobar més opcions relacionades amb la privadesa, la seguretat i la recollida de dades, consulta <ph name="BEGIN_LINK"/>Sincronització i serveis de Brave Software<ph name="END_LINK"/></translation>
 <translation id="6438234780621650381">Restableix la configuració</translation>
 <translation id="5293170712604732402">Restableix la configuració als valors predeterminats originals</translation>
 <translation id="892706138619340876">S'han restablert algunes opcions de configuració</translation>
@@ -2591,7 +2592,7 @@ Deseu el fitxer de clau en una ubicació segura. El necessitareu per crear versi
 <translation id="3422989461909154470">Tots els comptes de Brave Software amb la sessió iniciada en aplicacions i llocs web es poden gestionar aquí.</translation>
 <translation id="1987317783729300807">Comptes</translation>
 <translation id="8418661265246754237">Comptes de Brave Software</translation>
-<translation id="3297951628821704004">Suprimeix el compte d\'aquest dispositiu</translation>
+<translation id="3297951628821704004">Suprimeix el compte d'aquest dispositiu</translation>
 <translation id="1059855432287631118">Registre de l'empremta digital</translation>
 <translation id="878068003854005405">Comencem. Col·loca el dit al sensor.</translation>
 <translation id="176193854664720708">El sensor d'empremtes digitals és al botó d'engegada. Toca'l lleugerament amb un dit.</translation>

@@ -606,7 +606,7 @@
 <translation id="833986336429795709">ಈ ಲಿಂಕ್ ತೆರೆಯಲು, ಅಪ್ಲಿಕೇಶನ್ ಆಯ್ಕೆ ಮಾಡಿ</translation>
 <translation id="6751344591405861699"><ph name="WINDOW_TITLE"/> (ಅದೃಶ್ಯ)</translation>
 <translation id="4960294539892203357"><ph name="WINDOW_TITLE"/> - <ph name="PROFILE_NAME"/></translation>
-<translation id="5428850089342283580"><ph name="ACCNAME_APP"/> (ನವೀಕರಣವು ಲಭ್ಯವಿದೆ)</translation>
+<translation id="5428850089342283580"><ph name="ACCNAME_APP"/> (ಅಪ್‌ಡೇಟ್‌ ಲಭ್ಯವಿದೆ)</translation>
 <translation id="8525306231823319788">ಪೂರ್ಣ ಪರದೆ</translation>
 <translation id="932327136139879170">Home</translation>
 <translation id="5556459405103347317">ಮರುಲೋಡ್‌</translation>
@@ -1061,7 +1061,7 @@
 <translation id="3334632933872291866"><ph name="WINDOW_TITLE"/> - ಚಿತ್ರದಲ್ಲಿನ ಚಿತ್ರ ಮೋಡ್‌ನಲ್ಲಿ ವೀಡಿಯೊ ಪ್ಲೇ ಆಗುತ್ತಿದೆ</translation>
 <translation id="6438992844451964465"><ph name="WINDOW_TITLE"/> - ಆಡಿಯೋ ಪ್ಲೇ ಆಗುತ್ತಿದೆ</translation>
 <translation id="353316712352074340"><ph name="WINDOW_TITLE"/> - ಆಡಿಯೋ ಮ್ಯೂಟ್ ಮಾಡಲಾಗಿದೆ</translation>
-<translation id="9176611096776448349"><ph name="WINDOW_TITLE"/> - ಬ್ಲೂಟೂತ್ ಸಾಧನ ಸಂಪರ್ಕಪಡಿಸಲಾಗಿದೆ</translation>
+<translation id="9176611096776448349"><ph name="WINDOW_TITLE"/> - ಬ್ಲೂಟೂತ್ ಸಾಧನ ಸಂಪರ್ಕಗೊಂಡಿದೆ</translation>
 <translation id="6026819612896463875"><ph name="WINDOW_TITLE"/> - USB ಸಾಧನ ಸಂಪರ್ಕಗೊಂಡಿದೆ</translation>
 <translation id="324849028894344899"><ph name="WINDOW_TITLE"/> - ನೆಟ್‌ವರ್ಕ್ ದೋಷ</translation>
 <translation id="8980951173413349704"><ph name="WINDOW_TITLE"/> - ಕ್ರ್ಯಾಶ್ ಮಾಡಲಾಗಿದೆ</translation>
@@ -1732,7 +1732,6 @@
 <translation id="6827236167376090743">ಈ ವೀಡಿಯೊ ಸತತವಾಗಿ ಪ್ಲೇ ಆಗುತ್ತಲೇ ಇರುತ್ತದೆ.</translation>
 <translation id="6248400709929739064">ಉಪಶೀರ್ಷಿಕೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು</translation>
 <translation id="7881969471599061635">ಉಪಶೀರ್ಷಿಕೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605"><ph name="PRIMARY_EMAIL"/> ಸೇರಿದಂತಹ ಕೆಲವು ಸೆಟ್ಟಿಂಗ್‍ಗಳನ್ನು ನಿಮ್ಮೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಲಾಗಿದೆ. ಬಹು ಸೈನ್‍-ಇನ್ ಬಳಸುವಾಗ ಮಾತ್ರ ಈ ಸೆಟ್ಟಿಂಗ್‍ಗಳು ನಿಮ್ಮ ಖಾತೆಯ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುತ್ತವೆ.</translation>
 <translation id="5860491529813859533">ಆನ್ ಮಾಡಿ</translation>
 <translation id="1485141095922496924">ಆವೃತ್ತಿ <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -1851,6 +1850,7 @@
 <translation id="6352773953037195952">ಹೆಚ್ಚು</translation>
 <translation id="3677657024345889897">ಕನಿಷ್ಠ ಪರಿಮಾಣ</translation>
 <translation id="167160931442925455">ಇನ್ನಷ್ಟು ಜೋರಾಗಿ</translation>
+<translation id="2445007895943112260">&lt;ph name="PERCENTAGE"&gt;$1&lt;ex&gt;120&lt;/ex&gt;%&lt;/ph&gt;</translation>
 <translation id="9129010913019873477"><ph name="PERCENTAGE"/> (ಡಿಫಾಲ್ಟ್‌‌)</translation>
 <translation id="3602290021589620013">ಪೂರ್ವವೀಕ್ಷಣೆ</translation>
 <translation id="7037509989619051237">ಪೂರ್ವವೀಕ್ಷಣೆಗಾಗಿ ಪಠ್ಯಕ್ಕೆ ಹೋಗಿ</translation>
@@ -1976,7 +1976,7 @@
 <translation id="4572659312570518089">"<ph name="DEVICE_NAME"/>" ಗೆ ಸಂಪರ್ಕಪಡಿಸುವಾಗ ದೃಢೀಕರಣವನ್ನು ರದ್ದು ಮಾಡಲಾಗಿದೆ.</translation>
 <translation id="8283475148136688298">"<ph name="DEVICE_NAME"/>" ಗೆ ಸಂಪರ್ಕಪಡಿಸುವಾಗ ದೃಢೀಕರಣ ಕೋಡ್ ಅನ್ನು ತಿರಸ್ಕರಿಸಲಾಗಿದೆ.</translation>
 <translation id="2796424461616874739">"<ph name="DEVICE_NAME"/>" ಗೆ ಸಂಪರ್ಕಪಡಿಸುವಾಗ ದೃಢೀಕರಣದ ಸಮಯ ಮುಕ್ತಾಯಗೊಂಡಿದೆ.</translation>
-<translation id="7664620655576155379">ಬೆಂಬಲಿಸದಿರುವ ಬ್ಲೂಟೂತ್‌ ಸಾಧನ: "<ph name="DEVICE_NAME"/>".</translation>
+<translation id="7664620655576155379">ಬೆಂಬಲಿಸದಿರುವ ಬ್ಲೂಟೂತ್ ಸಾಧನ: "<ph name="DEVICE_NAME"/>".</translation>
 <translation id="693807610556624488">ಬರೆಯುವಿಕೆ ಕಾರ್ಯಾಚರಣೆಯು ಈ ಸಾಧನಕ್ಕೆ ಗುಣಲಕ್ಷಣದ ಗರಿಷ್ಠ ಉದ್ದವನ್ನು ಮೀರುತ್ತದೆ: "<ph name="DEVICE_NAME"/>".</translation>
 <translation id="56197088284879152">ರಿಮೋಟ್ ಸಾಧನಕ್ಕೆ ಸಂಪರ್ಕವು ದಟ್ಟಣೆಯಿಂದ ಕೂಡಿದೆ: "<ph name="DEVICE_NAME"/>".</translation>
 <translation id="3120430004221004537">ನೀಡಿರುವ ಕಾರ್ಯಾಚರಣೆಗೆ ಈ ಸಾಧನದಲ್ಲಿ ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಸಾಕಷ್ಟಿಲ್ಲ: "<ph name="DEVICE_NAME"/>".</translation>
@@ -2753,6 +2753,7 @@
 <translation id="3954469006674843813"><ph name="WIDTH"/> x <ph name="HEIGHT"/> (<ph name="REFRESH_RATE"/> ಹರ್ಟ್ಜ್‌)</translation>
 <translation id="7889565820482017512">ಡಿಸ್‌ಪ್ಲೇ ಗಾತ್ರ</translation>
 <translation id="8448729345478502352">ನಿಮ್ಮ ಪರದೆಯ ಮೇಲೆ ಐಟಂಗಳನ್ನು ಸಣ್ಣದು ಅಥವಾ ದೊಡ್ಡದು ಮಾಡಿ</translation>
+<translation id="513425442047539523">&lt;ph name="DISPLAY_ZOOM"&gt;$1&lt;ex&gt;120&lt;/ex&gt;%&lt;/ph&gt;</translation>
 <translation id="2155772377859296191"><ph name="WIDTH"/> x <ph name="HEIGHT"/> ನಂತೆ ತೋರುತ್ತಿದೆ</translation>
 <translation id="4863769717153320198"><ph name="WIDTH"/> x <ph name="HEIGHT"/> (ಡಿಫಾಲ್ಟ್‌‌) ನಂತೆ ತೋರುತ್ತಿದೆ</translation>
 <translation id="1125550662859510761"><ph name="WIDTH"/> x <ph name="HEIGHT"/> (ಸ್ಥಳೀಯ) ನಂತೆ ತೋರುತ್ತಿದೆ</translation>

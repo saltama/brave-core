@@ -1746,7 +1746,6 @@
 <translation id="6827236167376090743">Це відео буде відтворюватися, доки рак на горі не свисне.</translation>
 <translation id="6248400709929739064">Увімкнути субтитри</translation>
 <translation id="7881969471599061635">Вимкнути субтитри</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Деякі налаштування, які встановив користувач <ph name="PRIMARY_EMAIL"/>, доступні для вас. Ці налаштування впливають на ваш обліковий запис, лише коли використовується паралельний вхід.</translation>
 <translation id="5860491529813859533">Увімкнути</translation>
 <translation id="1485141095922496924">Версія <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -1998,7 +1997,7 @@
 <translation id="577322787686508614">Операцію перегляду заборонено на пристрої <ph name="DEVICE_NAME"/>.</translation>
 <translation id="3141917231319778873">Цей запит не підтримується на пристрої <ph name="DEVICE_NAME"/>.</translation>
 <translation id="6122875415561139701">Операцію внесення змін заборонено на пристрої <ph name="DEVICE_NAME"/>.</translation>
-<translation id="439266289085815679"><ph name="USER_EMAIL"/> керує налаштуваннями Bluetooth.</translation>
+<translation id="439266289085815679">Налаштуваннями Bluetooth керує <ph name="USER_EMAIL"/>.</translation>
 <translation id="784934925303690534">Період часу</translation>
 <translation id="3958004920128806270">Щоб очистити дані веб-перегляду лише на цьому пристрої, але зберегти їх в обліковому записі Brave Software, <ph name="BEGIN_LINK"/>вийдіть з облікового запису<ph name="END_LINK"/>.</translation>
 <translation id="4445433576366924090">Щоб очистити дані веб-перегляду на всіх синхронізованих пристроях і в обліковому записі Brave Software, <ph name="BEGIN_LINK"/>перейдіть у налаштування синхронізації<ph name="END_LINK"/>.</translation>

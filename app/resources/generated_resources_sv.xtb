@@ -1746,7 +1746,6 @@ Spara nyckelfilen på ett säkert ställe. Den behövs om du ska skapa nya versi
 <translation id="6827236167376090743">Denna video spelas upp för evigt.</translation>
 <translation id="6248400709929739064">Aktivera undertexter</translation>
 <translation id="7881969471599061635">Inaktivera undertexter</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Vissa inställningar som tillhör <ph name="PRIMARY_EMAIL"/> delas med dig. Dessa inställningar påverkar bara ditt konto när du använder multiinloggning.</translation>
 <translation id="5860491529813859533">Aktivera</translation>
 <translation id="1485141095922496924">Version <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -1865,6 +1864,7 @@ Spara nyckelfilen på ett säkert ställe. Den behövs om du ska skapa nya versi
 <translation id="6352773953037195952">Högsta</translation>
 <translation id="3677657024345889897">Lägst</translation>
 <translation id="167160931442925455">Högst</translation>
+<translation id="2445007895943112260">&lt;ph name="PERCENTAGE"&gt;$1&lt;ex&gt;120&lt;/ex&gt;%&lt;/ph&gt;</translation>
 <translation id="9129010913019873477"><ph name="PERCENTAGE"/> (standard)</translation>
 <translation id="3602290021589620013">Förhandsgranskning</translation>
 <translation id="7037509989619051237">Text för förhandsgranskning</translation>
@@ -2764,6 +2764,7 @@ Spara nyckelfilen på ett säkert ställe. Den behövs om du ska skapa nya versi
 <translation id="3954469006674843813"><ph name="WIDTH"/> × <ph name="HEIGHT"/> (<ph name="REFRESH_RATE"/> Hz)</translation>
 <translation id="7889565820482017512">Visningsstorlek</translation>
 <translation id="8448729345478502352">Gör objekt på skärmen mindre eller större</translation>
+<translation id="513425442047539523">&lt;ph name="DISPLAY_ZOOM"&gt;$1&lt;ex&gt;120&lt;/ex&gt;%&lt;/ph&gt;</translation>
 <translation id="2155772377859296191">Ser ut som <ph name="WIDTH"/> × <ph name="HEIGHT"/></translation>
 <translation id="4863769717153320198">Ser ut som <ph name="WIDTH"/> × <ph name="HEIGHT"/> (standard)</translation>
 <translation id="1125550662859510761">Ser ut som <ph name="WIDTH"/> × <ph name="HEIGHT"/> (fast)</translation>

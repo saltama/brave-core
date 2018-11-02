@@ -1748,7 +1748,6 @@ Pessoas com conexões mais lentas talvez não vejam seu conteúdo.</translation>
 <translation id="6827236167376090743">Este vídeo continuará sendo reproduzido indefinidamente.</translation>
 <translation id="6248400709929739064">Ativar legendas</translation>
 <translation id="7881969471599061635">Desativar legendas</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Algumas configurações pertencentes a <ph name="PRIMARY_EMAIL"/> estão sendo compartilhadas com você. Essas configurações afetam sua conta apenas quando o recurso de login múltiplo é usado.</translation>
 <translation id="5860491529813859533">Ativar</translation>
 <translation id="1485141095922496924">Versão <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -2852,7 +2851,7 @@ Pessoas com conexões mais lentas talvez não vejam seu conteúdo.</translation>
 <translation id="1607139524282324606">Limpar entrada</translation>
 <translation id="6025215716629925253">Rastreamento de pilha</translation>
 <translation id="3475538074809281797">{LINE_COUNT,plural, =1{&lt;1 linha não mostrada&gt;}one{&lt;$1 linha não mostrada&gt;}other{&lt;$1 linhas não mostradas&gt;}}</translation>
-<translation id="5334899159203764908">Saiba mais sobre o <ph name="BEGIN_LINK"/>acesso de site<ph name="END_LINK"/></translation>
+<translation id="5334899159203764908">Saiba mais sobre o <ph name="BEGIN_LINK"/>acesso aos sites<ph name="END_LINK"/></translation>
 <translation id="8389492867173948260">Permitir que a extensão leia e modifique todos os seus dados nos sites que você visitar:</translation>
 <translation id="407173827865827707">Ao clicar</translation>
 <translation id="6455264371803474013">Em sites específicos</translation>

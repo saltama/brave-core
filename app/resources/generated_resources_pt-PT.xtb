@@ -497,7 +497,7 @@ Mantenha o seu ficheiro de chave num local seguro, pois irá precisar dele para 
 <translation id="3987348946546879621">Poupou dados.</translation>
 <translation id="6228516488918914827">Página carregada mais rapidamente.</translation>
 <translation id="9137013805542155359">Mostrar original</translation>
-<translation id="71243390042171582">Atualizada há <ph name="MINUTES"/> min.</translation>
+<translation id="71243390042171582">Atualizada há <ph name="MINUTES"/> min</translation>
 <translation id="8743864605301774756">Atualizada há 1 hora</translation>
 <translation id="5638497698949808140">Atualizada há <ph name="HOURS"/> horas</translation>
 <translation id="1329584516321524826">Atualizado mesmo agora</translation>
@@ -860,7 +860,7 @@ Mantenha o seu ficheiro de chave num local seguro, pois irá precisar dele para 
 <translation id="3070156078150543526">A Brave Software pode utilizar o seu histórico de navegação para personalizar a Pesquisa Brave Software e outros serviços Brave Software</translation>
 <translation id="2532167245710864499">Melhore o Brave e a sua segurança ao enviar informações do sistema e de utilização para a Brave Software.</translation>
 <translation id="2709453993673701466">Pretende gerir a sincronização e a personalização antes de serem ativadas? Aceda às <ph name="BEGIN_LINK"/>Definições<ph name="END_LINK"/>.</translation>
-<translation id="2668128414154024727">Pode personalizar a qualquer momento as informações que a Brave Software recolhe nas <ph name="BEGIN_LINK"/>Definições<ph name="END_LINK"/>.</translation>
+<translation id="2668128414154024727">Pode personalizar em qualquer altura as informações que a Brave Software recolhe nas <ph name="BEGIN_LINK"/>Definições<ph name="END_LINK"/>.</translation>
 <translation id="6035247993547372482">A Brave Software pode utilizar o conteúdo nos sites que visita, a atividade do navegador e as interações para personalizar o Brave e outros serviços Brave Software, como o Tradutor, a Pesquisa e os anúncios. Pode personalizar esta opção nas Definições.</translation>
 <translation id="741204030948306876">Sim, aceito</translation>
 <translation id="8428213095426709021">Definições</translation>
@@ -1747,7 +1747,6 @@ Mantenha o seu ficheiro de chave num local seguro, pois irá precisar dele para 
 <translation id="6827236167376090743">Este vídeo continuará a ser reproduzido durante um tempo indefinido.</translation>
 <translation id="6248400709929739064">Ativar legendas</translation>
 <translation id="7881969471599061635">Desativar legendas</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Algumas definições pertencentes a <ph name="PRIMARY_EMAIL"/> estão a ser partilhadas consigo. Estas definições afetam apenas a sua conta quando utilizar o início de sessão integrado.</translation>
 <translation id="5860491529813859533">Ativar</translation>
 <translation id="1485141095922496924">Versão <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>

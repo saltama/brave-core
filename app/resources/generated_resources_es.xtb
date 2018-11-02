@@ -1746,7 +1746,6 @@ Guarda tu archivo de clave en un lugar seguro, ya que lo necesitarás para crear
 <translation id="6827236167376090743">Este vídeo seguirá reproduciéndose sin parar.</translation>
 <translation id="6248400709929739064">Habilitar subtítulos</translation>
 <translation id="7881969471599061635">Inhabilitar subtítulos</translation>
-<translation id="6061155539545534980"></translation>
 <translation id="4168015872538332605">Algunas opciones que pertenecen a <ph name="PRIMARY_EMAIL"/> se están compartiendo contigo. Estas opciones solo se aplican a tu cuenta cuando utilizas el inicio de sesión múltiple.</translation>
 <translation id="5860491529813859533">Habilitar</translation>
 <translation id="1485141095922496924">Versión <ph name="PRODUCT_VERSION"/> (<ph name="PRODUCT_CHANNEL"/>) <ph name="PRODUCT_MODIFIER"/> <ph name="PRODUCT_VERSION_BITS"/></translation>
@@ -2399,7 +2398,7 @@ Guarda tu archivo de clave en un lugar seguro, ya que lo necesitarás para crear
 <translation id="4055023634561256217">Es necesario reiniciar el dispositivo antes de poder restablecerlo con Powerwash.</translation>
 <translation id="1506061864768559482">Motor de búsqueda</translation>
 <translation id="7807067443225230855">Búsqueda y Asistente</translation>
-<translation id="2203682048752833055">Motor de búsqueda utilizado en la <ph name="BEGIN_LINK"/>barra de direcciones<ph name="END_LINK"/></translation>
+<translation id="2203682048752833055">Buscador utilizado en la <ph name="BEGIN_LINK"/>barra de direcciones<ph name="END_LINK"/></translation>
 <translation id="1432581352905426595">Administrar motores de búsqueda</translation>
 <translation id="2862205630718215619">Asistente de Brave Software</translation>
 <translation id="6978121630131642226">Motores de búsqueda</translation>
@@ -2530,7 +2529,7 @@ Guarda tu archivo de clave en un lugar seguro, ya que lo necesitarás para crear
 <translation id="5300287940468717207">¿Quieres restablecer los permisos de los sitios web?</translation>
 <translation id="2734760316755174687">También se restablecerán los permisos de los sitios web de <ph name="SITE_GROUP_NAME"/>.</translation>
 <translation id="3127156390846601284">Esta acción eliminará de tu dispositivo los datos almacenados de todos los sitios web que se muestran. ¿Quieres continuar?</translation>
-<translation id="150411034776756821">Quitar de <ph name="SITE"/></translation>
+<translation id="150411034776756821">Quitar <ph name="SITE"/></translation>
 <translation id="577624874850706961">Buscar cookies</translation>
 <translation id="6196640612572343990">Bloquear cookies de terceros</translation>
 <translation id="6782111308708962316">Impedir que los sitios web de terceros guarden y consulten datos de cookies</translation>
