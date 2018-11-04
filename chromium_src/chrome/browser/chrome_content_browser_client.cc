@@ -4,6 +4,10 @@
 
 #include "build/build_config.h"  // For OS_MACOSX
 
+#include "brave/browser/renderer_host/brave_render_message_filter.h"
+#undef ChromeRenderMessageFilter
+#define ChromeRenderMessageFilter BraveRenderMessageFilter
+
 #if defined(OS_MACOSX)
 #include "brave/browser/brave_browser_main_parts_mac.h"
 #undef ChromeBrowserMainPartsMac
